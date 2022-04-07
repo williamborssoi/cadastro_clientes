@@ -1,2 +1,5 @@
 Trabalho realizado para a matéria de Iot - Unoesc Joaçaba Ministrada pelo professor Herculano de Biasi.
 Autores: Adriano F. Wronski e William Borssoi
+
+Link Heroku - https://aw-clientes-2022.herokuapp.com/api/clientes 
+Link Github - https://github.com/williamborssoi/cadastro_clientes
