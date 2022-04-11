@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AW - Listar Clientes</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+
+
+	<style>
+		.branco {
+			color: #fff;
+		}
+		.footer {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1030;
+		}
+
+		#preto{
+			background: black;
+			color: #6c757d;
+			padding: 5px;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
+		<div class="container-xl">
+			<a class="navbar-brand" href="#">AW Soft</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsExample07XL">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdown07XL">
+							<li><a class="dropdown-item" href="/incluir_cliente">Novo Cliente</a></li>
+							<li><a class="dropdown-item" href="/clientes">Listar Clientes</a></li>
+						</ul>
+					</li>
+				</ul>
+				<form>
+					<div class="branco">
+						<script>
+							date = new Date().toLocaleDateString("pt-BR", {timeZone: "America/Sao_Paulo"});
+							document.write(date);
+						</script>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<br>
+
+<div class="container-xl mb-4">
+  <h2>Novo Cliente </h2>
+  <hr />
+  
+  <p>
+
+
+    <form id="cadastro" class="row g-3 needs-validation" th:object="${cliente}" method="post" th:action="${adicionar} ? @{/processa_incluir_cliente} :
+@{/processa_alterar_cliente/{id}(id=${cliente.id})}">
+
+      <div class="col-md-7">
+        <label for="validationCustom01" class="form-label">Nome Completo</label>
+        <input type="text" class="form-control" th:field="*{nome}" id="idNome" placeholder="Informe o Nome do Cliente" required>
+        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+      </div>
+
+      <div class="col-md-3">
+        <label for="validationCustom02" class="form-label">CPF</label>
+        <input type="number" class="form-control" th:field="*{cpf}" id="cpf" name="cpf" placeholder="Informe o CPF" required>
+        <span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span>
+      </div>
+
+      <div class="col-md-2">
+        <label for="validationCustom02" class="form-label">Idade</label>
+        <input type="number" class="form-control" th:field="*{idade}" id="idade" name="idade" placeholder="Informe a Idade" required>
+        <span th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></span>
+      </div>
+
+      <div class="col-md-12">
+        <label for="validationCustom02" class="form-label">Endereço</label>
+        <input type="text" class="form-control" th:field="*{endereco}" id="endereco" name="endereco" placeholder="Informe o Endereço Completo" required>
+        <span th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}"></span>
+      </div>
+
+
+
+      <div class="col-12">
+        <button class="btn btn-success" type="submit" th:value="${adicionar} ? 'Incluir' : 'Alterar'">Cadastrar</button>
+      </div>
+    </form>
+  </form>
+
+    <div class="footer" id="preto">
+        <div>
+            ANÁLISE E DESENVOLVIMENTO DE SISTEMAS @ 2022
+        </div>
+    </div>
+
+
+</div>
+
+  <script type="text/javascript" th:src="@{/js/action.js}"></script>
+  
+</body>
+</html>
