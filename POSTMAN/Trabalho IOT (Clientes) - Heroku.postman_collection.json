@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "d169d939-8d54-4f41-8aea-1dfa34789c43",
+		"name": "Trabalho IOT (Clientes) - Heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar todos os Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://aw-clientes-2022.herokuapp.com/api/clientes",
+					"protocol": "https",
+					"host": [
+						"aw-clientes-2022",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exibir Cliente por ID (Código)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://aw-clientes-2022.herokuapp.com/api/cliente/4",
+					"protocol": "https",
+					"host": [
+						"aw-clientes-2022",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Incluir Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"nome\": \"LETICIA\",\r\n    \"idade\": 23,\r\n    \"endereco\": \"PRESIDENTE CASTELO BRANCO\",\r\n    \"cpf\": 22233355511\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://aw-clientes-2022.herokuapp.com/api/cliente",
+					"protocol": "https",
+					"host": [
+						"aw-clientes-2022",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"nome\": \"LETICIA\",\r\n    \"idade\": 23,\r\n    \"endereco\": \"PRESIDENTE CASTELO BRANCO\",\r\n    \"cpf\": 22233355566\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://aw-clientes-2022.herokuapp.com/api/cliente",
+					"protocol": "https",
+					"host": [
+						"aw-clientes-2022",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"nome\": \"LETICIA\",\r\n    \"idade\": 23,\r\n    \"endereco\": \"PRESIDENTE CASTELO BRANCO\",\r\n    \"cpf\": 22233355566\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://aw-clientes-2022.herokuapp.com/api/cliente",
+					"protocol": "https",
+					"host": [
+						"aw-clientes-2022",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
